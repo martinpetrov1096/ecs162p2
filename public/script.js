@@ -3,7 +3,9 @@
 function uploadImage() 
 {
   const selectedFile = document.getElementById('replaceImage').files[0];
-  let label = document.getElementById('replaceImageLabel');
+  let label = document.querySelector('label[for="replaceImage"]')
+  
+
   const formData = new FormData();
   formData.append('newImage', selectedFile, selectedFile.name);
 
@@ -52,12 +54,25 @@ function share()
     }
   }
 
-/* Make AJAX POST request and send send settings[] as JSON */
+  /* Make AJAX POST request and send send settings[] as JSON */
   const xhr = new XMLHttpRequest();
   xhr.open('POST', 'share', true);
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.send(JSON.stringify(settings));
 }
 
+function changeFont(x) {
+  document.getElementById("pc").style.fontFamily = x;
+}
+
+
 document.getElementById("replaceImage").addEventListener("change", uploadImage);
+
+document.querySelector('.colorSettings').addEventListener('change', (event) => {
+  const result = document.querySelector('.postcard').style.backgroundColor = event.target.value;
+})
+document.querySelector('.fontSettings').addEventListener('change', (event) => {
+  const result = document.querySelector('.postcardCaption').style.fontFamily = event.target.value;
+})
+
 document.getElementById('shareButton').addEventListener('click', share);

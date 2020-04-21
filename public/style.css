@@ -48,11 +48,10 @@ main {
     border-radius: 15px;
     padding: 10px;
     min-height: 400px;
-    background-color: aquamarine;
 
     display:flex;
 }
-.postcardImage {
+.postcardImgContainer {
     flex: 1;
 
     padding: 5px;
@@ -108,6 +107,12 @@ input:checked ~.fontLabel:before {
     content: '\25C8';
 }
 
+#indieFlower ~ label {font-family: 'Indie Flower';}
+#dancingScript ~ label {font-family: 'Dancing Script';}
+#longCang ~ label {font-family: 'Long Cang';}
+#homemadeApple ~ label {font-family: 'Homemade Apple';}
+
+
 /* Color Settings */
 .colorSettings {
     flex-shrink: 1;
@@ -146,8 +151,6 @@ input:checked ~.colorLabel {
 #grayNurse  ~ *{ background-color: #eceeeb}
 #grayNickel ~ *{ background-color: #bab9b5}
 
-
-
 @media only screen and (max-width: 600px) {
     header {
         font-size: 30px;
@@ -155,7 +158,7 @@ input:checked ~.colorLabel {
     .postcard , .settings {
         flex-flow: column nowrap;
     }
-    .postcardImage {
+    .postcardImgContainer {
         border-bottom: 2px solid black;
     }
 }
@@ -168,7 +171,7 @@ input:checked ~.colorLabel {
     .postcard , .settings{
         flex-flow: row nowrap;
     }
-    .postcardImage {
+    .postcardImgContainer {
         border-right: 2px solid black;
     }
 }

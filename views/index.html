@@ -25,72 +25,70 @@
 
     <main>
       <div class="postcard">
-        <div class="postcardImage">
+        <div class="postcardImgContainer">
           <img id="postcardImg"/>
-          <label for="replaceImage" id="replaceImageLabel" class="bigButton">Choose Image</label>
+          <label for="replaceImage" class="bigButton">Choose Image</label>
           <input type="file" accept="image/png, .jpeg, .jpg, image/gif" id="replaceImage">
         </div>
-        <div class="postcardCaption">
-          <p contenteditable="true" id="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a dictum mi, eu ornare justo. Etiam</p>
-        </div>
+        <p class="postcardCaption" contenteditable="true" id="message"></p>
       </div>
 
       <div class="settings">
         <div class="fontSettings">
           <h3>Choose your font</h3>   
           <div>
-            <input type="radio" id="indieFlower" name="font" value="indieFlower" checked="checked">
+            <input type="radio" id="indieFlower" name="font" value="Indie Flower" onclick="changeFont('Indie Flower')" checked="checked">
             <label for="indieFlower" class="fontLabel">Indie-Flower</label>
           </div>
           <div>
-            <input type="radio" id="dancingScript" name="font" value="dancingScript">
+            <input type="radio" id="dancingScript" name="font" value="Dancing Script">
             <label for="dancingScript" class="fontLabel">Dancing Script</label>
           </div>
           <div>
-            <input type="radio" id="longCang" name="font" value="longCang">
+            <input type="radio" id="longCang" name="font" value="Long Cang">
             <label for="longCang" class="fontLabel">Long Cang</label>
           </div>
           <div>
-            <input type="radio" id="homemadeApple" name="font" value="homemadeApple">
+            <input type="radio" id="homemadeApple" name="font" value="Homemade Apple">
             <label for="homemadeApple" class="fontLabel">Homemade Apple</label>
           </div>
         </div>
         <div class="colorSettings">
           <h3>Choose your color</h3>
           <div>
-            <input type="radio" id="whiteRock" name="color" value="whiteRock" checked="checked">
+            <input type="radio" id="whiteRock" name="color" value="#e6e2cf" checked="checked">
             <label for="whiteRock" class="colorLabel"></label>
           </div>
           <div >
-            <input type="radio" id="akaroa" name="color" value="akaroa">
+            <input type="radio" id="akaroa" name="color" value="#dbcaac">
             <label for="akaroa" class="colorLabel"></label>
           </div>
           <div>
-            <input type="radio" id="foggyGrey" name="color" value="foggyGrey">
+            <input type="radio" id="foggyGrey" name="color" value="#c9cbb3">
             <label for="foggyGrey" class="colorLabel"></label>
           </div>
           <div>
-            <input type="radio" id="submarine" name="color" value="submarine">
+            <input type="radio" id="submarine" name="color" value="#bbc9ca">
             <label for="submarine" class="colorLabel"></label>
           </div>
           <div>
-            <input type="radio" id="spunPearl" name="color" value="spunPearl">
+            <input type="radio" id="spunPearl" name="color" value="#a6a5b5">
             <label for="spunPearl" class="colorLabel"></label>
           </div>
           <div>
-            <input type="radio" id="pinkSwan" name="color" value="pinkSwan">
+            <input type="radio" id="pinkSwan" name="color" value="#b5a6ab">
             <label for="pinkSwan" class="colorLabel"></label>
           </div>
           <div>
-            <input type="radio" id="oysterPink" name="color" value="oysterPink">
+            <input type="radio" id="oysterPink" name="color" value="#eccfcf">
             <label for="oysterPink" class="colorLabel"></label>
           </div>
           <div>
-            <input type="radio" id="grayNurse" name="color" value="grayNurse">
+            <input type="radio" id="grayNurse" name="color" value="#eceeeb">
             <label for="grayNurse" class="colorLabel"></label>
           </div>
           <div>
-            <input type="radio" id="grayNickel" name="color" value="grayNickel">
+            <input type="radio" id="grayNickel" name="color" value="#bab9b5">
             <label for="grayNickel" class="colorLabel"></label>
           </div>
         </div>
