@@ -1,34 +1,62 @@
-// server.js
-// where your node app starts
+/////////////////////////////////////////////////
+///////////////////// Config ////////////////////
+/////////////////////////////////////////////////
+const express = require('express');
+const multer = require('multer');
 
-// we've started you off with Express (https://expressjs.com/)
-// but feel free to use whatever libraries or frameworks you'd like through `package.json`.
-const express = require("express");
 const app = express();
-
-// our default array of dreams
-const dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
-
-// make all the files in 'public' available
-// https://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
+app.use("/images", express.static("images"));
+app.use(express.json());
 
-// https://expressjs.com/en/starter/basic-routing.html
+
+/////////////////////////////////////////////////
+//////////////////  Middleware //////////////////
+/////////////////////////////////////////////////
+
+/* Configure Multer for storing files */
+let storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, __dirname+'/images')    
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+let uploadMulter = multer({storage: storage});
+
+
+/////////////////////////////////////////////////
+////////////////////  Routing ///////////////////
+/////////////////////////////////////////////////
+
+/* Default Homepage */
 app.get("/", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
 });
 
-// send the default array of dreams to the webpage
-app.get("/dreams", (request, response) => {
-  // express helps us take JS objects and send them as JSON
-  response.json(dreams);
+/* HTTP Request for Image Upload */
+app.post('/uploadImage', uploadMulter.single('newImage'), function (request, response) {
+  console.log("Image Upload Request Received", request.file.originalname, request.file.size,"bytes")
+
+  if (request.file) {
+    response.end("Server Received "+request.file.originalname);
+  } else {
+    throw 'error';
+  }
 });
 
-// listen for requests :)
-const listener = app.listen(process.env.PORT, () => {
+/* HTTP Request for Caption Upload */
+app.post('/share', function(request, response) {
+  const json = request.body;
+  //const text = JSON.parse(json);
+  console.log('body: ' + JSON.stringify(request.body));
+  response.send(JSON.stringify(request.body));
+});
+
+/////////////////////////////////////////////////
+////////////////  Express Startup ///////////////
+/////////////////////////////////////////////////
+const listener = app.listen(8000, () => { /* TODO: Change back port to "process.env.PORT" */
   console.log("Your app is listening on port " + listener.address().port);
 });

@@ -1,5 +1,7 @@
+
 var express = require('express');
 var fs = require('fs');
+
 
 var router = express.Router();
 var content = fs.readFileSync('.glitch-assets', 'utf8');
@@ -11,8 +13,9 @@ var assets = rows.map((row) => {
 });
 assets = assets.filter((asset) => asset);
 
-// Example url
-// https://cdn.gomix.com/us-east-1%3A1a0f89c8-26bf-4073-baed-2b409695e959%2Ffoobar.png
+
+
+
 
 router.use((request, response) => {
   response.header("Access-Control-Allow-Origin", "*");

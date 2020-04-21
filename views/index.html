@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Welcome to Glitch!</title>
+    <title>Daily Postcard Creator</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A cool thing made with Glitch">
@@ -26,35 +26,73 @@
     <main>
       <div class="postcard">
         <div class="postcardImage">
-          <img src="/default.jpeg" id="postcardImg">
-          <h3 id="replaceImgBtn" class="button">Replace image</h3>
+          <img id="postcardImg"/>
+          <label for="replaceImage" id="replaceImageLabel" class="bigButton">Choose Image</label>
+          <input type="file" accept="image/png, .jpeg, .jpg, image/gif" id="replaceImage">
         </div>
         <div class="postcardCaption">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a dictum mi, eu ornare justo. Etiam
-          </p>
+          <p contenteditable="true" id="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a dictum mi, eu ornare justo. Etiam</p>
         </div>
       </div>
+
       <div class="settings">
         <div class="fontSettings">
-          <h3>Choose your font</h3>    
-               
-          <h4 style="font-family: Indie Flower;">Indie Flower</h4>
-          <h4 style="font-family: Dancing Script;">Dancing Script</h4>
-          <h4 style="font-family: Long Cang">Long Cang</h4>
-          <h4 style="font-family: Homemade Apple; font-size: 14px;">Homemade Apple</h4>
+          <h3>Choose your font</h3>   
+          <div>
+            <input type="radio" id="indieFlower" name="font" value="indieFlower" checked="checked">
+            <label for="indieFlower" class="fontLabel">Indie-Flower</label>
+          </div>
+          <div>
+            <input type="radio" id="dancingScript" name="font" value="dancingScript">
+            <label for="dancingScript" class="fontLabel">Dancing Script</label>
+          </div>
+          <div>
+            <input type="radio" id="longCang" name="font" value="longCang">
+            <label for="longCang" class="fontLabel">Long Cang</label>
+          </div>
+          <div>
+            <input type="radio" id="homemadeApple" name="font" value="homemadeApple">
+            <label for="homemadeApple" class="fontLabel">Homemade Apple</label>
+          </div>
         </div>
         <div class="colorSettings">
           <h3>Choose your color</h3>
-          <div></div>
-          <div ></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div>
+            <input type="radio" id="whiteRock" name="color" value="whiteRock" checked="checked">
+            <label for="whiteRock" class="colorLabel"></label>
+          </div>
+          <div >
+            <input type="radio" id="akaroa" name="color" value="akaroa">
+            <label for="akaroa" class="colorLabel"></label>
+          </div>
+          <div>
+            <input type="radio" id="foggyGrey" name="color" value="foggyGrey">
+            <label for="foggyGrey" class="colorLabel"></label>
+          </div>
+          <div>
+            <input type="radio" id="submarine" name="color" value="submarine">
+            <label for="submarine" class="colorLabel"></label>
+          </div>
+          <div>
+            <input type="radio" id="spunPearl" name="color" value="spunPearl">
+            <label for="spunPearl" class="colorLabel"></label>
+          </div>
+          <div>
+            <input type="radio" id="pinkSwan" name="color" value="pinkSwan">
+            <label for="pinkSwan" class="colorLabel"></label>
+          </div>
+          <div>
+            <input type="radio" id="oysterPink" name="color" value="oysterPink">
+            <label for="oysterPink" class="colorLabel"></label>
+          </div>
+          <div>
+            <input type="radio" id="grayNurse" name="color" value="grayNurse">
+            <label for="grayNurse" class="colorLabel"></label>
+          </div>
+          <div>
+            <input type="radio" id="grayNickel" name="color" value="grayNickel">
+            <label for="grayNickel" class="colorLabel"></label>
+          </div>
         </div>
 
         <h3 id="shareButton" class="button"> Share postcard</h3>
