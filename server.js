@@ -3,8 +3,9 @@
 /////////////////////////////////////////////////
 const express = require('express');
 const multer = require('multer');
-
+const fs = require('fs');
 const app = express();
+
 app.use(express.static("public"));
 app.use("/images", express.static("images"));
 app.use(express.json());
@@ -32,7 +33,15 @@ let uploadMulter = multer({storage: storage});
 
 /* Default Homepage */
 app.get("/", (request, response) => {
+  response.sendFile(__dirname + "/views/display.html");
+});
+
+app.get("/creator", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
+});
+
+app.get('/loadConfig', (request, response) => {
+  response.sendFile(__dirname + '/public/postcardData.json');
 });
 
 /* HTTP Request for Image Upload */
@@ -48,9 +57,14 @@ app.post('/uploadImage', uploadMulter.single('newImage'), function (request, res
 
 /* HTTP Request for Caption Upload */
 app.post('/share', function(request, response) {
-  const json = request.body;
-  //const text = JSON.parse(json);
-  console.log('body: ' + JSON.stringify(request.body));
+  const json = JSON.stringify(request.body);
+  fs.writeFile('public/postcardData.json', json, err => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+  });
+
   response.send(JSON.stringify(request.body));
 });
 

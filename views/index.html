@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/style.css">
 
     <!-- import the webpage's client-side javascript file -->
-    <script src="/script.js" defer></script>
+    <script src="/creator.js" defer></script>
   </head>
   <body>
     <header>
@@ -30,66 +30,66 @@
           <label for="replaceImage" class="bigButton">Choose Image</label>
           <input type="file" accept="image/png, .jpeg, .jpg, image/gif" id="replaceImage">
         </div>
-        <p class="postcardCaption" contenteditable="true" id="message"></p>
+        <p class="postcardMessage" contenteditable="true" id="message"></p>
       </div>
 
       <div class="settings">
         <div class="fontSettings">
-          <h3>Choose your font</h3>   
+          <h3 class="settingsHeader">Choose your font</h3>   
           <div>
-            <input type="radio" id="indieFlower" name="font" value="Indie Flower" onclick="changeFont('Indie Flower')" checked="checked">
-            <label for="indieFlower" class="fontLabel">Indie-Flower</label>
+            <input type="radio" id="indieFlower" name="font" checked="checked">
+            <label for="indieFlower" class="fontLabel indieFlower">Indie-Flower</label>
           </div>
           <div>
-            <input type="radio" id="dancingScript" name="font" value="Dancing Script">
-            <label for="dancingScript" class="fontLabel">Dancing Script</label>
+            <input type="radio" id="dancingScript" name="font">
+            <label for="dancingScript" class="fontLabel dancingScript">Dancing Script</label>
           </div>
           <div>
-            <input type="radio" id="longCang" name="font" value="Long Cang">
-            <label for="longCang" class="fontLabel">Long Cang</label>
+            <input type="radio" id="longCang" name="font">
+            <label for="longCang" class="fontLabel longCang">Long Cang</label>
           </div>
           <div>
-            <input type="radio" id="homemadeApple" name="font" value="Homemade Apple">
-            <label for="homemadeApple" class="fontLabel">Homemade Apple</label>
+            <input type="radio" id="homemadeApple" name="font">
+            <label for="homemadeApple" class="fontLabel homemadeApple">Homemade Apple</label>
           </div>
         </div>
         <div class="colorSettings">
-          <h3>Choose your color</h3>
+          <h3 class="settingsHeader">Choose your color</h3>
           <div>
-            <input type="radio" id="whiteRock" name="color" value="#e6e2cf" checked="checked">
-            <label for="whiteRock" class="colorLabel"></label>
+            <input type="radio" id="whiteRock" name="color" checked="checked">
+            <label for="whiteRock" class="colorLabel whiteRock"></label>
           </div>
           <div >
-            <input type="radio" id="akaroa" name="color" value="#dbcaac">
-            <label for="akaroa" class="colorLabel"></label>
+            <input type="radio" id="akaroa" name="color">
+            <label for="akaroa" class="colorLabel akaroa"></label>
           </div>
           <div>
-            <input type="radio" id="foggyGrey" name="color" value="#c9cbb3">
-            <label for="foggyGrey" class="colorLabel"></label>
+            <input type="radio" id="foggyGrey" name="color">
+            <label for="foggyGrey" class="colorLabel foggyGrey"></label>
           </div>
           <div>
-            <input type="radio" id="submarine" name="color" value="#bbc9ca">
-            <label for="submarine" class="colorLabel"></label>
+            <input type="radio" id="submarine" name="color">
+            <label for="submarine" class="colorLabel submarine"></label>
           </div>
           <div>
-            <input type="radio" id="spunPearl" name="color" value="#a6a5b5">
-            <label for="spunPearl" class="colorLabel"></label>
+            <input type="radio" id="spunPearl" name="color">
+            <label for="spunPearl" class="colorLabel spunPearl"></label>
           </div>
           <div>
-            <input type="radio" id="pinkSwan" name="color" value="#b5a6ab">
-            <label for="pinkSwan" class="colorLabel"></label>
+            <input type="radio" id="pinkSwan" name="color">
+            <label for="pinkSwan" class="colorLabel pinkSwan"></label>
           </div>
           <div>
-            <input type="radio" id="oysterPink" name="color" value="#eccfcf">
-            <label for="oysterPink" class="colorLabel"></label>
+            <input type="radio" id="oysterPink" name="color">
+            <label for="oysterPink" class="colorLabel oysterPink"></label>
           </div>
           <div>
-            <input type="radio" id="grayNurse" name="color" value="#eceeeb">
-            <label for="grayNurse" class="colorLabel"></label>
+            <input type="radio" id="grayNurse" name="color">
+            <label for="grayNurse" class="colorLabel grayNurse"></label>
           </div>
           <div>
-            <input type="radio" id="grayNickel" name="color" value="#bab9b5">
-            <label for="grayNickel" class="colorLabel"></label>
+            <input type="radio" id="grayNickel" name="color">
+            <label for="grayNickel" class="colorLabel grayNickel"></label>
           </div>
         </div>
 
