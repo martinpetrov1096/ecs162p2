@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Daily Postcard Creator</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Homemade+Apple|Indie+Flower|Long+Cang&display=swap" rel="stylesheet">
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/creator.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Daily Postcard Creator</h1>
+    </header>
+
+    <main>
+      <div class="postcard">
+        <div class="postcardImgContainer">
+          <img id="postcardImg"/>
+          <label for="replaceImage" class="bigButton">Choose Image</label>
+          <input type="file" accept="image/png, .jpeg, .jpg, image/gif" id="replaceImage">
+        </div>
+        <p class="postcardMessage" contenteditable="true" id="message"></p>
+      </div>
+
+      <div class="settings">
+        <div class="fontSettings">
+          <h3 class="settingsHeader">Choose your font</h3>   
+          <div>
+            <input type="radio" id="indieFlower" name="font" checked="checked">
+            <label for="indieFlower" class="fontLabel indieFlower">Indie-Flower</label>
+          </div>
+          <div>
+            <input type="radio" id="dancingScript" name="font">
+            <label for="dancingScript" class="fontLabel dancingScript">Dancing Script</label>
+          </div>
+          <div>
+            <input type="radio" id="longCang" name="font">
+            <label for="longCang" class="fontLabel longCang">Long Cang</label>
+          </div>
+          <div>
+            <input type="radio" id="homemadeApple" name="font">
+            <label for="homemadeApple" class="fontLabel homemadeApple">Homemade Apple</label>
+          </div>
+        </div>
+        <div class="colorSettings">
+          <h3 class="settingsHeader">Choose your color</h3>
+          <div>
+            <input type="radio" id="whiteRock" name="color" checked="checked">
+            <label for="whiteRock" class="colorLabel whiteRock"></label>
+          </div>
+          <div >
+            <input type="radio" id="akaroa" name="color">
+            <label for="akaroa" class="colorLabel akaroa"></label>
+          </div>
+          <div>
+            <input type="radio" id="foggyGrey" name="color">
+            <label for="foggyGrey" class="colorLabel foggyGrey"></label>
+          </div>
+          <div>
+            <input type="radio" id="submarine" name="color">
+            <label for="submarine" class="colorLabel submarine"></label>
+          </div>
+          <div>
+            <input type="radio" id="spunPearl" name="color">
+            <label for="spunPearl" class="colorLabel spunPearl"></label>
+          </div>
+          <div>
+            <input type="radio" id="pinkSwan" name="color">
+            <label for="pinkSwan" class="colorLabel pinkSwan"></label>
+          </div>
+          <div>
+            <input type="radio" id="oysterPink" name="color">
+            <label for="oysterPink" class="colorLabel oysterPink"></label>
+          </div>
+          <div>
+            <input type="radio" id="grayNurse" name="color">
+            <label for="grayNurse" class="colorLabel grayNurse"></label>
+          </div>
+          <div>
+            <input type="radio" id="grayNickel" name="color">
+            <label for="grayNickel" class="colorLabel grayNickel"></label>
+          </div>
+        </div>
+
+        <h3 id="shareButton" class="button"> Share postcard</h3>
+      </div>
+    </main>
+
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:2em;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>

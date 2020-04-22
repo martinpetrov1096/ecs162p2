@@ -1,0 +1,183 @@
+/*****************************************/
+/********** Reusable Classes *************/
+/*****************************************/
+.button {
+    border: 2px solid black;
+    padding: 10px !important;
+    width: 160px !important;
+    flex-shrink: 0 !important;
+    text-align: center !important;
+    font-size: 18px !important;
+    font-weight: bold;
+}
+.bigButton {
+    margin: 20px;
+    border: 2px dotted black;
+    width: 80%;
+    height: 100%;
+    font-size: 18px;
+    font-weight: bold;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+input {
+    display: none;
+}
+
+.indieFlower   {font-family: 'Indie Flower';}
+.dancingScript {font-family: 'Dancing Script';}
+.longCang      {font-family: 'Long Cang';}
+.homemadeApple {font-family: 'Homemade Apple';}
+
+.whiteRock  { background-color: #e6e2cf;}
+.akaroa     { background-color: #dbcaac;}
+.foggyGrey  { background-color: #c9cbb3;}
+.submarine  { background-color: #bbc9ca;}
+.spunPearl  { background-color: #a6a5b5;}
+.pinkSwan   { background-color: #b5a6ab;}
+.oysterPink { background-color: #eccfcf;}
+.grayNurse  { background-color: #eceeeb;}
+.grayNickel { background-color: #bab9b5;}
+
+
+/*****************************************/
+/********** Site Specific Classes ********/
+/*****************************************/
+body {
+    font-family: Arial;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+header {
+    padding: 40px;
+    font-family: Dancing Script;
+}
+main {
+    padding: 10px;
+    max-width: 710px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+
+/******************************/
+/********** Postcard **********/
+/******************************/
+.postcard {
+    border-radius: 15px;
+    padding: 10px;
+    min-height: 400px;
+
+    display:flex;
+}
+.postcardImgContainer {
+    flex: 1;
+    padding: 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+#postcardImg {
+    border-radius: 15px;
+    width: 100%;
+    padding: 5px;
+}
+.postcardMessage {
+    flex: 1;
+    padding: 10px;
+    font-size: 24px;
+    line-height: 2;
+}
+
+
+/******************************/
+/********** Settings **********/
+/******************************/
+.settings {
+    padding: 40px 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.settings > div {
+    margin: 10px
+}
+.settingsHeader {
+    width: 100%;
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
+/* Font Settings */
+.fontSettings {
+    flex-shrink: 0;
+}
+.fontLabel:before {
+    content: '\25C7';
+}
+input:checked ~.fontLabel:before {
+    content: '\25C8';
+}
+
+/* Color Settings */
+.colorSettings {
+    flex-shrink: 1;
+
+    display: flex;
+    flex-flow: row wrap;
+}
+.colorSettings > div {
+    margin: 5px; 
+    height: 45px;
+    width: 45px;
+}
+.colorLabel{
+    display: block;
+    margin: 0; 
+    border: 2px solid rgba(0,0,0,0);
+    height: 45px;
+    width: 45px;
+}
+.colorLabel:hover {
+    border: 2px dashed black;
+}
+input:checked ~.colorLabel {
+    border: 2px solid black;
+}
+
+
+/*****************************************/
+/************* Media Queries *************/
+/*****************************************/
+
+@media only screen and (max-width: 600px) {
+    header {
+        font-size: 30px;
+    }
+    .postcard , .settings {
+        flex-flow: column nowrap;
+    }
+    .postcardImgContainer {
+        border-bottom: 2px solid black;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    header {
+        align-self: flex-start;
+        font-size: 40px;
+    }
+    .postcard , .settings{
+        flex-flow: row nowrap;
+    }
+    .postcardImgContainer {
+        border-right: 2px solid black;
+    }
+}
